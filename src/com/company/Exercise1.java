@@ -35,7 +35,7 @@ public class Exercise1 {
         else if (angleA == 60 && angleB == 60 && angleC == 60) {
                 System.out.println("The triangle has three equal angles of 60 degrees, so the triangle is equilateral.");
             }
-        else if ((angleA == angleB) && (angleA == angleC) || (angleC == angleB) && sumOfAngles == 180) {
+        else if (sumOfAngles == 180 && ((angleA == angleB) || (angleA == angleC) || (angleC == angleB))) {
                 System.out.println("The triangle has two equal angles, so the triangle is isosceles.");
             }
         else if ((angleA < 90) && (angleB < 90) && (angleC < 90) && (sumOfAngles == 180)) {
