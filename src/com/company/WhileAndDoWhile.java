@@ -9,5 +9,12 @@ public class WhileAndDoWhile {
             System.out.println(k);
             k--;
         }
+
+        int v = 0;
+        do {
+            System.out.println("V is: " + v);
+            v--;
+        }
+        while (v >= 1);
     }
 }
