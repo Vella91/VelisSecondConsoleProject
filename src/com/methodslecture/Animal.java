@@ -5,15 +5,13 @@ public class Animal {
         System.out.println("I am an animal!");
     }
 
-    int age;
-    public Animal(){
-        this.age = age;
-        System.out.println("The animal is of the following age: "  + age);
-    }
+   private int age;
+   public String name;
 
-    String name;
-    Animal(String name){
+    public Animal(String name){
+        this.age = age;
         this.name = name;
+        System.out.println("The animal is of the following age: "  + age);
         System.out.println("The animal has the following name: " + name);
     }
 }
