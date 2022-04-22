@@ -10,4 +10,15 @@ public class Examples {
         myMethod("Cassie", 16);
         myMethod("Destiny", 25);
     }
+
+    static int a = 5;
+    void printName(){
+        System.out.println("Your name is ....");
+    }
+
+    public static void myMethod(){
+        System.out.println("Hello!");
+    }
+
+    Examples myExample = new Examples();
 }

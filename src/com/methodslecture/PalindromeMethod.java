@@ -15,7 +15,7 @@ public class PalindromeMethod {
         int a2 = reverseDigits(a1);
         if (a2 == a1) {
             return true;
-            } else {
+        } else {
             return false;
         }
     }
