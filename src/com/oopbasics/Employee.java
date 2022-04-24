@@ -7,7 +7,6 @@ public class Employee {
     private double employeeSalary;
 
     public Employee() {
-        this.employeeSalary = employeeSalary;
     }
 
     public String getFullName() {
