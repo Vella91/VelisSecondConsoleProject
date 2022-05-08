@@ -40,6 +40,10 @@ public class CarWith5Elements {
         carColor = "N/A";
     }
 
+    public CarWith5Elements(int carReleaseYear){
+        this("Suzuki", 150, carReleaseYear, false);
+    }
+
     public CarWith5Elements(){
     }
 
@@ -48,5 +52,6 @@ public class CarWith5Elements {
         CarWith5Elements myFirstCar = new CarWith5Elements("Aventi", "Blue", true);
         CarWith5Elements mySecondCar = new CarWith5Elements("Astra", "Gray", 1995,  2500);
         CarWith5Elements myThirdCar = new CarWith5Elements("Punto", 1600, 2002, true);
+        CarWith5Elements myFourthCar = new CarWith5Elements(2010);
     }
 }

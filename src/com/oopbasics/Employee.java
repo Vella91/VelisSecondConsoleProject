@@ -32,4 +32,8 @@ public class Employee {
         System.out.println("The new employee salary after the raise is: ");
         return updatedSalary;
     }
+
+    public String toString(){
+        return "";
+    }
 }
