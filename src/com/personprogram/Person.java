@@ -1,7 +1,9 @@
 package com.personprogram;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
+
 
 public class Person {
     private final String name;
@@ -65,10 +67,9 @@ public class Person {
 
     public boolean checkIfWrongSex(){
         try {
-            if (sex != "male" && sex != "female") {
+            if (!Objects.equals(sex, "male") && (!Objects.equals(sex, "female"))) {
                 System.out.println("The person's sex is a wrong value. Please provide a correct sex: male or female");
-            }
-            else System.out.println("The person's sex is: " + sex);
+            } else System.out.println("The person's sex is: " + sex);
         }
         catch(Exception e){
             System.out.println(e);
@@ -81,33 +82,65 @@ public class Person {
         try {
             String userLanguage = language;
             sayHelloInEnglish = "Hello";
-            if (userLanguage == "Italian") {
+
+            if (userLanguage.equals("Italian")) {
                 System.out.println("Ciao!");
-            } else if (userLanguage == "Bulgarian") {
+            } else if (userLanguage.equals("Bulgarian")) {
                 System.out.println("Zdr ko pr!");
-            } else if (userLanguage == "English")
+            } else if (userLanguage.equals("English")) {
                 System.out.println(sayHelloInEnglish);
-            else System.out.println("We don't support such a language option to say hello right now, buuuut...");
+            } else System.out.println("We don't support such a language option to say hello right now, buuuut...");
         } catch (Exception e) {
             System.out.println(e);
         }
         return sayHelloInEnglish;
     }
 
-    public static void main(String[] args) {
-        Person person1 = new Person("Daniel", "male", "Christian", "Bulgarian", "Developer", "Bulgarian",  "Bulgaria");
-        System.out.println(person1.checkIfWrongSex());
-        System.out.println(person1.sayHello());
-        //TODO wrong sex implementation to be added
+    public boolean checkIfCelebrateEaster() {
+        if (religion.equals("Orthodox")) {
+            boolean checkIfCelebrateEaster = true;
+            System.out.println("The user celebrates Orthodox Easter.");
+        } else if (religion.equals("Catholic")) {
+            boolean checkIfCelebrateEaster = true;
 
-        Person person2 = new Person("Pablo", "wrong", "Judaism", "Spanish", "Marketing expert", "Cuban", "Cuba");
-        System.out.println(person2.checkIfWrongSex());
-        System.out.println(person2.sayHello());
-
-        Person person3 = new Person("Margaret", "female", "Islam", "Italian", "Pilot", "English", "Australia");
-        System.out.println(person2.checkIfWrongSex());
-        System.out.println(person2.sayHello());
+            System.out.println("The user celebrates Catholica Easter");
+        } else {
+            boolean checkIfCelebrateEaster = false;
+            System.out.println("The person does not celebrate Easter");
+        }
+        return false;
     }
 
+    public boolean isAdult(int age) {
+        boolean isAdult = false;
+        if (age >= 18) {
+            isAdult = true;
+            System.out.println("User is Adult.");
+        } else if (age >= 21 && nationality.equals("American")) {
+            isAdult = true;
+            System.out.println("User is Adult in America.");
+        } else System.out.println("User is not an Adult.");
+        return false;
+    }
 
+    public static void main(String[] args) {
+        Person person1 = new Person("Daniel", "male", "Orthodox", "Bulgarian", "Developer", "Bulgarian", "Bulgaria");
+        System.out.println(person1.checkIfWrongSex());
+        System.out.println(person1.sayHello());
+        System.out.println(person1.checkIfCelebrateEaster());
+        System.out.println(person1.checkIfCelebrateEaster());
+
+        Person person2 = new Person("Pablo", "wrong", "Catholic", "Spanish", "Marketing expert", "Cuban", "Cuba");
+        System.out.println(person2.checkIfWrongSex());
+        System.out.println(person2.checkIfCelebrateEaster());
+        System.out.println(person2.sayHello());
+        System.out.println(person2.checkIfCelebrateEaster());
+
+
+        Person person3 = new Person("Margaret", "female", "Islam", "Italian", "Pilot", "English", "Australia");
+        System.out.println(person3.checkIfWrongSex());
+        System.out.println(person3.sayHello());
+        System.out.println(person3.checkIfCelebrateEaster());
+        System.out.println(person3.checkIfCelebrateEaster());
+    }
 }
